@@ -27,8 +27,6 @@ gem 'jquery-rails'
 gem 'devise', '~> 4.2'
 # linter
 gem 'rubocop', '0.56.0'
-gem 'jquery-rails'
-gem 'bootstrap', '~> 4.2.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
