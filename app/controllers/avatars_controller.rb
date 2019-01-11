@@ -1,30 +1,26 @@
 class AvatarsController < ApplicationController
   before_action :set_avatar, only: [:show, :edit, :update, :destroy]
 
-  # GET /avatars
-  # GET /avatars.json
   def index
     @avatars = Avatar.all
   end
 
-  # GET /avatars/1
-  # GET /avatars/1.json
   def show
   end
 
-  # GET /avatars/new
   def new
     @avatar = Avatar.new
   end
 
-  # GET /avatars/1/edit
   def edit
+<<<<<<< HEAD
     # @avatar.update(avatar_params)
     # redirect_back(fallback_location: root_path)
+=======
+>>>>>>> 9d4c53d014522f057df9410ed1e2d6ecd6b50672
   end
 
-  # POST /avatars
-  # POST /avatars.json
+
   def create
     @avatar = Avatar.new(avatar_params)
     @avatar.save
@@ -32,9 +28,8 @@ class AvatarsController < ApplicationController
 
   end
 
-  # PATCH/PUT /avatars/1
-  # PATCH/PUT /avatars/1.json
   def update
+<<<<<<< HEAD
     # respond_to do |format|
       # if
         @avatar.update(avatar_params)
@@ -57,15 +52,17 @@ class AvatarsController < ApplicationController
       format.html { redirect_to avatars_url, notice: 'Avatar was successfully destroyed.' }
       format.json { head :no_content }
     end
+=======
+    @avatar.update(avatar_params)
+    redirect_back(fallback_location: root_path)
+>>>>>>> 9d4c53d014522f057df9410ed1e2d6ecd6b50672
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_avatar
       @avatar = Avatar.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def avatar_params
       params.require(:avatar).permit(:username, :image, :remove_image)
     end
