@@ -13,11 +13,6 @@ class AvatarsController < ApplicationController
   end
 
   def edit
-<<<<<<< HEAD
-    # @avatar.update(avatar_params)
-    # redirect_back(fallback_location: root_path)
-=======
->>>>>>> 9d4c53d014522f057df9410ed1e2d6ecd6b50672
   end
 
 
@@ -29,34 +24,10 @@ class AvatarsController < ApplicationController
   end
 
   def update
-<<<<<<< HEAD
-    # respond_to do |format|
-      # if
-        @avatar.update(avatar_params)
-        redirect_to profile_path(current_user.id)
-
-        #format.html { redirect_to @avatar, notice: 'Avatar was successfully updated.' }
-        #format.json { render :show, status: :ok, location: @avatar }
-      #else
-        #format.html { render :edit }
-        #format.json { render json: @avatar.errors, status: :unprocessable_entity }
-      #end
-    #end
-  end
-
-  # DELETE /avatars/1
-  # DELETE /avatars/1.json
-  def destroy
-    @avatar.destroy
-    respond_to do |format|
-      format.html { redirect_to avatars_url, notice: 'Avatar was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-=======
     @avatar.update(avatar_params)
-    redirect_back(fallback_location: root_path)
->>>>>>> 9d4c53d014522f057df9410ed1e2d6ecd6b50672
+    redirect_to profile_path(current_user.id)
   end
+
 
   private
     def set_avatar
