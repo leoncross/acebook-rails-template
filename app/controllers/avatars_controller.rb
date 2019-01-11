@@ -20,7 +20,6 @@ class AvatarsController < ApplicationController
   # GET /avatars/1/edit
   def edit
     # @avatar.update(avatar_params)
-
     # redirect_back(fallback_location: root_path)
   end
 
@@ -39,7 +38,7 @@ class AvatarsController < ApplicationController
     # respond_to do |format|
       # if
         @avatar.update(avatar_params)
-        redirect_back(fallback_location: root_path)
+        redirect_to profile_path(current_user.id)
 
         #format.html { redirect_to @avatar, notice: 'Avatar was successfully updated.' }
         #format.json { render :show, status: :ok, location: @avatar }

@@ -1,8 +1,24 @@
 <%= render 'shared/nav' %>
 
-<h1>Change your Avatar</h1>
+<h1>Change your Profile Picture</h1>
 
-<%= render 'form', avatar: @avatar %>
+<h3>Current Picture:<h3>
+<br>
+<%= image_tag @avatar.image.thumb.url %>
+<br>
+<br>
 
-<%= link_to 'Show', @avatar %> |
-<%= link_to 'Back', avatars_path %>
+<%= form_for @avatar, url: avatar_path(@avatar), method: :patch, html: { multipart: true } do |f| %>
+
+  <div class="field">
+    <%= f.hidden_field :username, :value => current_user.username %>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
