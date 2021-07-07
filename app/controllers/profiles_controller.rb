@@ -8,7 +8,7 @@ respond_to :html
     @profile = User.find(current_user.id)
     @users = User.all
     @friends = Friend.where requester: @profile.username
-    @posts = Post.last(10)
+    @posts = Post.last(10).reverse
     @like = Like.new
     respond_with(@users)
   end
@@ -16,7 +16,8 @@ respond_to :html
   def show
     @profile = User.find(params[:id])
     @post = Post.new
-    @posts = Post.where recipient_username: @profile.username
+    profile_posts = Post.where recipient_username: @profile.username
+    @posts = profile_posts.reverse
     @bio = Bio.new
     @bio_profile = Bio.find_by(bio_username: @profile.username)
     @friend = Friend.new
